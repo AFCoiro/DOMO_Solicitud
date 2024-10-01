@@ -1,0 +1,13 @@
+header{
+    background-color: #ffffff;
+}
+main{
+    background-color: #022b41;
+}
+footer{
+    background-color: #f0f4ff;
+}
+.linkedIn{
+    filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
+    width: 30px;
+}
