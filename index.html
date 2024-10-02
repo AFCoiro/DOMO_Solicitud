@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+ 
      <!-- meta labels from SEO -->
 
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <meta property="og:title" content="Businezz X - Grow your business with us">
     <meta property="og:description" content="Join Businezz X to get professional web services and business consultation. Book your free consultation now.">
    
-    <!-- poner imagen-->                                  <meta property="og:image" content="url-de-imagen.png">
+    <meta property="og:image" content="img/logo.svg">
     <meta property="og:url" content="https://www.linkedin.com/in/agustinfcoiro/">
     <meta name="twitter:card" content="summary_large_image">
     
@@ -36,10 +36,10 @@
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary container">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand myBrand" href="#">
             <img src="img/logo.svg" alt="Logo de Businezz X" style="height: 40px;" class="logo">
           </a>
       
@@ -57,9 +57,18 @@
               <li class="nav-item">
                 <a class="nav-link" href="#about" title="Acerca de Businezz X">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pages" title="Ver nuestras páginas">Pages↓</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Pages
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#home">Home</a></li>
+                  <li><a class="dropdown-item" href="#about">About</a></li>
+                  <li><a class="dropdown-item" href="#packages">Packages</a></li>
+                  <li><a class="dropdown-item" href="#contact">Contact</a></li>
+                </ul>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="#packages" title="Paquetes de Businezz X">Packages</a>
               </li>
@@ -73,57 +82,63 @@
       
             <!-- Free Consultation button -->
             <div class="d-flex">
-              <button class="btn btn-outline-primary myButton">Free Consultation →</button>
+              <button class="btn btn-outline-primary myButton borderBtn">Free Consultation →</button>
             </div>
           </div>
         </div>
       </nav>
     </header>  
     
-    <main class="mymain">
+    <main class="mymain container-fluid">
+      <div class="row">
         <!-- Left -->
-        <section class="main-left">
-            <div class="upper-left">
-                <p class="small-title">Welcome to Businezz X</p>
-                <h1>Join us in growing your business</h1>
-                </div>
-                <div class="lower-left">
-                <p class="small-title">Elevate your business with Businezz X, a professional Webflow template</p>
-                <button class="myButton">Contact us→</button>
-            </div>
+        <section class=" col-12 col-md-6  main-left">
+          <div class="container mainDiv-left">
+                <p class="small-title borderBtn">Welcome to Businezz X</p>
+                <h1>Join us in growing your <span>business</span>.</h1>
+                <p class="subtitle">Elevate your business with Businezz X, a professional Webflow template.</p>
+                <button class="myButton borderBtn">Contact us→</button>
+          </div>
         </section>
 
         <!-- Right (form) -->
-        <section class="main-right">
-            <form>
-                <div class="form-header">
-                    <p class="small-title">Book your free consultation</p>
-                    <h2>Get a free consultation</h2>
+        <section class="col-12 col-md-6 main-right d-flex justify-content-center align-items-center" style="height: 100vh;">
+          <form class="myForm square-form p-4" aria-label="Consulta gratuita">
+              <fieldset>
+                <legend class="small-title borderBtn">Book your free consultation</legend>
+                <h2>Get a free consultation</h2>
+              
+                <div class="formBody">
+                  <div class="formInputs d-flex justify-content-between">
+                    <label for="name" >Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Name" class="form-control myInput" required>
+              
+                    <label for="email" >Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="contact@email.com" class="form-control myInput" required>
+                  </div>
+              
+                  <label for="message" >Mensaje</label>
+                  <textarea id="message" name="message" placeholder="Please type your message here..." class="form-control" required></textarea>
+              
+                  <button type="submit" class="myBtn">Get in Touch</button>
                 </div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre">
-                        <input type="email" placeholder="contact@email.com">
-                    </div>
-                    <textarea placeholder="Pleace type your message here..."></textarea>
-                    <button type="submit" >Get in Touch</button>
-                </div>
-            </form>
-        </section>
-
+              </fieldset>
+          </form>
+      </section>
+      
+      </div>
     </main>
 
-    <footer>
-        <div class="contact-info">
+  <footer class="container-fluid">
+      <div class="col text-center">
             <p>Desarrollado por <strong>Agustín Coiro</strong></p>
             <a href="https://www.linkedin.com/in/agustinfcoiro/" target="_blank" class="linkedin-button">
               <img src="/img/linkedin.svg" alt="Logo de LinkedIn" class="linkedIn">
             </a>
-        </div>
-        <div class="project-description">
-            <p>párrafo hablando un poco sobre la entrega que estás haciendo.</p>
-        </div>
-    </footer>
+            <p>Párrafo hablando un poco sobre la entrega que estás haciendo.</p>
+      </div>
+  </footer>
+  
 
 
 <!-- Bootstrap JS + Popper.js -->
