@@ -1,5 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, "Inter", sans-serif; 
+} 
+
+    body{
+        color: #022b41;
+    }
 header{
     background-color: #ffffff;
+}
+header li{
+    font-weight: 700;
+    color: #022b41;
 }
 main{
     background-color: #022b41;
@@ -7,7 +21,20 @@ main{
 footer{
     background-color: #f0f4ff;
 }
-.linkedIn{
+.linkedIn, .logo{
     filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
     width: 30px;
+}
+
+.myButton{
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: solid #022b41 2px;
+    font-weight: 700;
+    color: #022b41;
+    padding: 0.6rem 1rem; 
+}
+
+.main-left{
+    color: #f0f4ff;
 }
