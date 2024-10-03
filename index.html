@@ -36,11 +36,11 @@
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary container my-nav">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand myBrand" href="#">
-            <img src="img/logo.svg" alt="Logo de Businezz X" style="height: 40px;" class="logo">
+          <a class="navbar-brand my-brand" href="#">
+            <img src="img/logo.svg" alt="Logo de Businezz X" style="height: 40px;" class="my-logo">
           </a>
       
           <!-- movile Toggle -->
@@ -82,45 +82,45 @@
       
             <!-- Free Consultation button -->
             <div class="d-flex">
-              <button class="btn btn-outline-primary myButton borderBtn">Free Consultation →</button>
+              <button class="my-btn hvr-btn"><span>Free Consultation &nbsp;</span></button>
             </div>
           </div>
         </div>
       </nav>
     </header>  
     
-    <main class="mymain container-fluid">
+    <main class="my-main container-fluid">
       <div class="row">
         <!-- Left -->
-        <section class=" col-12 col-md-6  main-left">
+        <section class=" col-12 col-md-6  main-left ">
           <div class="container mainDiv-left">
-                <p class="small-title borderBtn">Welcome to Businezz X</p>
-                <h1>Join us in growing your <span>business</span>.</h1>
+                <h1 class="small-title border-btn">Welcome to Businezz X</h1>
+                <h2>Join us in growing your <span>business</span>.</h2>
                 <p class="subtitle">Elevate your business with Businezz X, a professional Webflow template.</p>
-                <button class="myButton borderBtn">Contact us→</button>
+                <button class="my-btn hvr-btn"><span>Contact us &nbsp;</span></button>
           </div>
         </section>
 
         <!-- Right (form) -->
-        <section class="col-12 col-md-6 main-right d-flex justify-content-center align-items-center" style="height: 100vh;">
-          <form class="myForm square-form p-4" aria-label="Consulta gratuita">
+        <section class="col-12 col-md-6 main-right d-flex justify-content-center align-items-center">
+          <form class="my-form square-form " aria-label="Consulta gratuita">
               <fieldset>
-                <legend class="small-title borderBtn">Book your free consultation</legend>
-                <h2>Get a free consultation</h2>
+                <legend class="small-title border-btn">Book your free consultation</legend>
+                <h3>Get a free consultation</h3>
               
-                <div class="formBody">
-                  <div class="formInputs d-flex justify-content-between">
+                <div class="form-body">
+                  <div class="form-inputs d-flex justify-content-between">
                     <label for="name" >Nombre</label>
                     <input type="text" id="name" name="name" placeholder="Name" class="form-control myInput" required>
               
                     <label for="email" >Correo electrónico</label>
                     <input type="email" id="email" name="email" placeholder="contact@email.com" class="form-control myInput" required>
                   </div>
-              
+                  
                   <label for="message" >Mensaje</label>
-                  <textarea id="message" name="message" placeholder="Please type your message here..." class="form-control" required></textarea>
+                  <textarea id="message" name="message" placeholder="Please type your message here..." class="form-control myInput" required></textarea>
               
-                  <button type="submit" class="myBtn">Get in Touch</button>
+                  <button type="submit" class="myBtn-form ">Get in Touch</button>
                 </div>
               </fieldset>
           </form>
