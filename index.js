@@ -1,6 +1,5 @@
 /*
 -formulario
 -sumar al carrito con el click
--hacer un loading cuando ingresas al sitio, para que luego se carguen las animaciones
-
+-hacer un loading cuando se manda el formulario (en lugar del boton)
 */

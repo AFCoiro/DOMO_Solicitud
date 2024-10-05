@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* btn active*/
+/*borde top subtitle*/
+/*btn contactUs hover and underline span*/
+/*btn contactUs active*/
 /*color for brand and linkedIn icons*/
 /*button shape for titles and buttons*/
 /*button functions for buttons*/
@@ -82,9 +86,15 @@ body header .my-nav {
   background-color: #FFFFFF !important;
   height: 100%;
 }
-body header .my-nav li a {
-  font-weight: 700 !important;
-  color: #022b41 !important;
+body header .my-nav .my-li a {
+  font-weight: 700;
+  color: #022b41;
+}
+body header .my-nav .my-li a:hover {
+  color: #0499FF;
+}
+body header .my-nav .my-li a:active {
+  color: #5c748f;
 }
 body header .my-nav .my-dropdown {
   background-color: #FFFFFF;
@@ -97,26 +107,26 @@ body header .my-nav .my-dropdown a:active {
   background-color: #cedae6;
   color: #FFFFFF;
 }
-body .my-brand, body footer .linkedIn {
+body .my-brand {
   border-right: solid 1px #cedae6;
   padding-right: 1rem;
   display: flex;
   align-items: center;
   height: 30px;
 }
-body .my-brand .my-logo, body footer .linkedIn .my-logo {
+body .my-brand .my-logo {
   filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
   width: 30px;
 }
 body .btn-nav, body .my-main .main-left .mainDiv-left .btn-contactUs {
   background-color: #FFFFFF !important;
-  color: #022b41 !important;
   border: #022b41 solid 2px !important;
   border-radius: 30px !important;
   padding: 0.6rem 1rem !important;
   width: 220px !important;
-  font-weight: 700 !important;
-  font-size: 16px !important;
+  color: #022b41;
+  font-size: 16px;
+  font-weight: 700;
   font-weight: 700 !important;
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
@@ -124,14 +134,14 @@ body .btn-nav, body .my-main .main-left .mainDiv-left .btn-contactUs {
   position: relative;
 }
 body .btn-nav:hover, body .my-main .main-left .mainDiv-left .btn-contactUs:hover {
-  background-color: #cedae6 !important;
-  color: #003957 !important;
-  border-color: #003957 !important;
+  background-color: #022b41 !important;
+  color: #f0f4ff !important;
+  border-color: #022b41 !important;
 }
 body .btn-nav:active, body .my-main .main-left .mainDiv-left .btn-contactUs:active {
-  background-color: #003957 !important;
+  background-color: #053E5C !important;
   color: #FFFFFF !important;
-  border-color: #FFFFFF !important;
+  border-color: #053E5C !important;
 }
 body .btn-nav::after, body .my-main .main-left .mainDiv-left .btn-contactUs::after {
   content: " →";
@@ -149,6 +159,10 @@ body .btn-nav span, body .my-main .main-left .mainDiv-left .btn-contactUs span {
 }
 body .btn-nav:hover span, body .my-main .main-left .mainDiv-left .btn-contactUs:hover span {
   margin-right: 0.5rem;
+}
+body .my-active a {
+  color: #5c748f !important;
+  border-bottom: 1px solid #5c748f;
 }
 body .my-main {
   background: radial-gradient(at bottom left, #003957 2%, #022b41 98%);
@@ -210,15 +224,15 @@ body .my-main .main-left .mainDiv-left {
   width: 80%;
 }
 body .my-main .main-left .mainDiv-left .my-h1 {
-  background-color: #022b41 !important;
-  color: #f0f4ff !important;
-  border: #f0f4ff solid 2px !important;
+  background-color: transparent !important;
+  border: #5c748f solid 2px !important;
   border-radius: 30px !important;
   padding: 0.6rem 1rem !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
-  font-weight: 700 !important;
-  font-size: 12px !important;
+  color: #f0f4ff;
+  font-size: 14px;
+  font-weight: 700;
   opacity: 0;
   transform: translateY(-100vh);
   animation: dropAndBounce 1s ease-out forwards;
@@ -243,10 +257,10 @@ body .my-main .main-left .mainDiv-left h2 span {
   animation-delay: 1s;
 }
 body .my-main .main-left .mainDiv-left .subtitle {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   border-top: #5c748f solid 1px;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0 2rem;
   display: inline-block;
   opacity: 0;
   animation: fadeIn 1.5s ease-out forwards;
@@ -283,7 +297,7 @@ body .my-main .main-right {
   /*------------FORM---------------*/
 }
 body .my-main .main-right .my-form {
-  background-color: #f0f4ff;
+  background-color: #FFFFFF;
   padding: 30px 20px;
   width: 28rem;
   height: 28rem;
@@ -294,20 +308,20 @@ body .my-main .main-right .my-form {
   animation-delay: 0.9s;
 }
 body .my-main .main-right .my-form .my-legend {
-  background-color: #f0f4ff !important;
-  color: #022b41 !important;
+  background-color: #FFFFFF !important;
   border: #022b41 solid 2px !important;
   border-radius: 30px !important;
   padding: 0.6rem 1rem !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
-  font-weight: 700 !important;
-  font-size: 12px !important;
-  margin: 8px 20px;
+  color: #022b41;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 8px 20px 20px;
 }
 body .my-main .main-right .my-form h3 {
   font-weight: 700;
-  margin: 8px 20px;
+  margin: 20px;
 }
 body .my-main .main-right .my-form .form-body {
   display: flex;
@@ -321,7 +335,7 @@ body .my-main .main-right .my-form .form-body .form-inputs {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 body .my-main .main-right .my-form .form-body label {
   overflow: hidden !important;
@@ -332,35 +346,37 @@ body .my-main .main-right .my-form .form-body .myInput {
 }
 body .my-main .main-right .my-form .form-body .myBtn-form {
   background-color: #FFFFFF !important;
-  color: #022b41 !important;
   border: #022b41 solid 2px !important;
   border-radius: 5px !important;
   padding: 1rem 0 !important;
   width: auto !important;
-  font-weight: 700 !important;
-  font-size: 16px !important;
+  color: #022b41;
+  font-size: 16px;
+  font-weight: 700;
   font-weight: 700 !important;
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   display: inline-block;
 }
 body .my-main .main-right .my-form .form-body .myBtn-form:hover {
-  background-color: #cedae6 !important;
-  color: #003957 !important;
-  border-color: #003957 !important;
+  background-color: #0499FF !important;
+  color: #f0f4ff !important;
+  border-color: #0499FF !important;
 }
 body .my-main .main-right .my-form .form-body .myBtn-form:active {
-  background-color: #003957 !important;
-  color: #FFFFFF !important;
-  border-color: #FFFFFF !important;
+  background-color: #0067AD !important;
+  color: #f0f4ff !important;
+  border-color: #0067AD !important;
 }
 body .my-main .main-right .my-form .form-body input::-moz-placeholder, body .my-main .main-right .my-form .form-body textarea::-moz-placeholder {
   color: #022b41 !important;
   font-weight: 700;
+  font-size: 14px;
 }
 body .my-main .main-right .my-form .form-body input::placeholder, body .my-main .main-right .my-form .form-body textarea::placeholder {
   color: #022b41 !important;
   font-weight: 700;
+  font-size: 14px;
 }
 body .my-main .main-right .my-form .form-body input:focus::-moz-placeholder, body .my-main .main-right .my-form .form-body textarea:focus::-moz-placeholder {
   color: #FFFFFF !important;
@@ -382,13 +398,85 @@ body footer {
   background-color: #f0f4ff;
   position: relative;
   width: 100%;
+  padding-top: 60px;
   z-index: 1;
 }
-body footer .linkedIn {
+body footer .sec-footer-1 {
+  padding-bottom: 60px;
+}
+body footer .sec-footer-1 .my-nav {
+  background-color: #f0f4ff !important;
+}
+body footer .sec-footer-1 .my-nav ul {
+  gap: 1rem;
+}
+body footer .sec-footer-1 .my-nav ul li a {
+  font-weight: 700;
+  color: #022b41;
+}
+body footer .sec-footer-1 .my-nav ul li a:hover {
+  color: #0499FF;
+}
+body footer .sec-footer-1 .my-nav ul li a:active {
+  color: #5c748f;
+}
+body footer .sec-footer-1 .follow-us p {
+  color: #022b41;
+  font-size: 14px;
+  font-weight: 700;
+}
+body footer .img-socialNet {
   filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
   width: 30px;
-  display: inline-block;
-  border: none;
-  padding: 0;
-  margin-bottom: 1rem;
+}
+body footer .footer-divider {
+  padding: 30px 0;
+  border-top: 1px solid #5c748f;
+}
+body footer .footer-divider .about-title {
+  color: #022b41;
+  font-size: 18px;
+  font-weight: 700;
+}
+@media (max-width: 992px) {
+  body footer .footer-divider .about-title {
+    padding-top: 60px;
+  }
+}
+body footer .footer-divider p {
+  margin-bottom: 0;
+  color: #022b41;
+  font-size: 14px;
+  font-weight: 600;
+}
+body footer .footer-divider a {
+  color: #022b41;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+body footer .dropDown-sec {
+  padding: 30px 0;
+}
+body footer .dropDown-sec article p {
+  width: 90%;
+}
+body footer .dropDown-sec address {
+  align-self: center;
+}
+body footer .dropDown-sec address h5 {
+  color: #022b41;
+  font-size: clamp(1rem, 5vw, 3rem);
+  font-weight: 600;
+}
+body footer .dropDown-sec address h6 {
+  color: #0499FF;
+  font-size: 18px;
+  font-weight: 700;
+}
+body footer .dropDown-sec address p, body footer .dropDown-sec address a {
+  color: #022b41;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

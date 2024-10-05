@@ -28,14 +28,12 @@ body{
         .my-nav{
             background-color: $white-color !important;
             height: 100%;
-            //.my-brand linea 38
-            li{
+            .my-li {
                 a{
-                    font-weight: $font-weight-1 !important;
-                    color: $primary-color !important;
+                    @include bootstrap-nav-li_a;
+                
                 }
             }
-            //.btn-nav linea 49
             .my-dropdown{
                 background-color: $white-color; 
                 z-index: 1000; 
@@ -51,7 +49,7 @@ body{
         }
 
     }
-    //***********Para poder utilizar el extend en contact-us y linkedIn, se coloco por fuera del header el my-band y btn-nav
+    //***********Para poder utilizar el extend en algunos items del nav, se coloco por fuera del header losiguiente:
     .my-brand{
         border-right: solid 1px $secondary-color-dark;
         padding-right: 1rem;
@@ -65,13 +63,17 @@ body{
     .btn-nav{
         @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-little-btn,$font-btn);
 
-        @include btn-function($secondary-color-dark, $primary-color-clear, $primary-color-clear,
-                              $primary-color-clear, $white-color, $white-color);
+        @include btn-function($primary-color, $secondary-color, $primary-color,
+        $primary-color-clear-1, $white-color, $primary-color-clear-1);
                               
         @include btn-animation;  
     }
-
-
+    .my-active{
+        a{
+            color: $primary-color-clear-2 !important;
+            border-bottom: 1px solid $primary-color-clear-2;
+        }
+    }
 
     /*----------------------MAIN------------------------*/
     .my-main {
@@ -130,7 +132,7 @@ body{
             .mainDiv-left{
                 width: 80%;
                 .my-h1{
-                    @include btn-shape($primary-color, $secondary-color, $secondary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-title);
+                    @include btn-shape(transparent, $secondary-color, $primary-color-clear-2$border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-input);
                     opacity: 0; 
                     transform: translateY(-100vh); 
                     animation: dropAndBounce 1s ease-out forwards;
@@ -148,17 +150,17 @@ body{
                     animation: slideInFromLeft 0.8s ease-out forwards;
                     span {
                         display: inline-block; 
-                        border-bottom: 3px solid $underline-title-color; 
+                        border-bottom: 3px solid $primary-color-clear-3; 
                         width: 0; 
                         animation: borderBottomAppear 0.2s ease forwards;
                         animation-delay: 1s; 
                       }
                  }
                  .subtitle{
-                    font-size: 20px;
+                    font-size: 24px;
                     font-weight: $font-weight-2;
-                    border-top: $primary-color-clear-1 solid 1px;
-                    padding-top: 1.5rem;
+                    border-top: $primary-color-clear-2 solid 1px;
+                    padding: 1.5rem 0 2rem;
                     display: inline-block;
                     @include mixin-fadeIn;
 
@@ -179,7 +181,7 @@ body{
                     }
                 }
                 .subtitle{
-                    font-size: 18px ;
+                    font-size: $font-title ;
                     font-weight: $font-weight-3;
                 }
             }
@@ -196,7 +198,7 @@ body{
             z-index: 1;
             /*------------FORM---------------*/
             .my-form{
-                background-color: $secondary-color;
+                background-color: $white-color;
                 padding: 30px $padding-form;
                 width: 28rem;
                 height: 28rem;
@@ -204,12 +206,13 @@ body{
                 animation: fadeIn 0.5s ease-out forwards;
                 animation-delay: 0.9s; 
                 .my-legend{
-                    @include btn-shape($secondary-color,$primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-title);
-                    margin: 8px $padding-form;
+                    @include btn-shape($white-color,$primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-input);
+                    margin: 8px $padding-form $padding-form;
+                    
                 } 
                 h3{
                     font-weight: $font-weight-1;
-                    margin: 8px $padding-form; 
+                    margin:  $padding-form; 
                 }
                 .form-body {
                     display: flex;
@@ -222,7 +225,7 @@ body{
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        gap: 1rem;
+                        gap: 0.8rem;
                     }
                     label{
                         overflow: hidden !important;
@@ -234,13 +237,14 @@ body{
                     .myBtn-form{
                         @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,5px, 1rem 0, auto,$font-btn);
 
-                        @include btn-function($secondary-color-dark, $primary-color-clear,$primary-color-clear,
-                                              $primary-color-clear, $white-color, $white-color);
+                        @include btn-function($primary-color-clear-3,$secondary-color,$primary-color-clear-3,
+                        $primary-color-clear-4, $secondary-color, $primary-color-clear-4);
                     }
                     input, textarea {
                         &::placeholder {
                             color: $primary-color !important;
                             font-weight: $font-weight-1;
+                            font-size: $font-input;
                         }
                     
                         &:focus::placeholder {
@@ -268,14 +272,81 @@ footer {
     background-color: $secondary-color;
     position: relative; 
     width: 100%;
+    padding-top: 60px;
     z-index: 1; 
-    .linkedIn {
-        @extend .my-brand;
+    .sec-footer-1{
+        padding-bottom: 60px;
+        .my-nav{
+            background-color: $secondary-color !important;
+            ul{
+            gap:1rem;
+            li{
+                a{
+                    @include bootstrap-nav-li_a;
+    
+                }
+            }
+    
+            }
+        @media (max-width: 992px){
+
+        }
+        }
+        .follow-us{
+            p{
+                @include title-style($primary-color,$font-input,$font-weight-1);
+            }
+    
+        }
+
+    }
+    .img-socialNet{
         @include svg-icons;
-        display: inline-block;
-        border: none;
-        padding: 0;
-        margin-bottom: 1rem;
+    }
+    .footer-divider{
+        padding: 30px 0;
+        border-top: 1px solid $primary-color-clear-2;
+        .about-title{
+            @include title-style($primary-color,$font-title,$font-weight-1);
+            @media (max-width: 992px){
+                padding-top: 60px;
+            }
+        }
+        
+        p{
+            margin-bottom: 0;
+            @include title-style($primary-color,$font-input,$font-weight-2);
+        }
+        a{
+            @include title-style($primary-color,$font-input,$font-weight-2);
+            text-decoration: none;
+        }
+    }
+
+    .dropDown-sec{
+        padding: 30px 0;
+        article{
+            p{
+                width: 90%;
+            }
+        }
+        address{
+            align-self: center;
+            h5{
+                @include title-style($primary-color,clamp(1rem, 5vw, 3rem),$font-weight-2);
+
+            }
+            h6{
+                @include title-style($primary-color-clear-3,$font-title,$font-weight-1);
+
+            }
+            p,a{
+                @include title-style($primary-color,$font-input,$font-weight-2);
+                text-decoration: none;
+            }
+        }
+    }
+    @media (max-width: 992px){
     }
 }
 

@@ -6,11 +6,11 @@ $secondary-color-dark:#cedae6;
 
 $white-color: #FFFFFF;
 
-  
-$primary-color-clear-1:#5c748f;
-$primary-color-clear-2:#6989ac;
-$primary-color-clear-3:#7a9ec2;
-$underline-title-color:#0499FF;
+
+$primary-color-clear-1:#053E5C;/* btn active*/
+$primary-color-clear-2:#5c748f;/*borde top subtitle*/
+$primary-color-clear-3:#0499FF;/*btn contactUs hover and underline span*/
+$primary-color-clear-4:#0067AD;/*btn contactUs active*/
 
 $font-weight-0:800;
 $font-weight-1:700;
@@ -28,5 +28,6 @@ $padding-form:20px;
 $width-little-btn: 220px;
 $width-title:fit-content;
 
+$font-title:18px;
 $font-btn:16px;
-$font-title:12px;
+$font-input:14px;

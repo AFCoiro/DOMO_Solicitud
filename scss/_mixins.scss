@@ -8,19 +8,22 @@
     filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
     width: 30px;
 } 
+//color ,font and font-width for texts ans titles
+@mixin title-style($color,$size,$weight){
+    color: $color;
+    font-size:$size;
+    font-weight: $weight;
+}
  /*button shape for titles and buttons*/
 
 @mixin btn-shape($bg-color, $color, $border,$border-rad, $padding, $width, $font-sz ){
 
     background-color: $bg-color !important;
-    color:$color !important;
     border: $border !important;
     border-radius: $border-rad !important;
     padding: $padding !important;
     width: $width !important;
-    font-weight: 700 !important;
-    font-size: $font-sz !important; 
-
+    @include title-style($color,$font-sz,$font-weight-1);
 }
  /*button functions for buttons*/
 @mixin btn-function($hv-bg, $hv-cl, $hv-br,
@@ -72,4 +75,18 @@
     opacity: 0; 
     animation: fadeIn 1.5s ease-out forwards;
     animation-delay: 0.8s; 
+}
+
+
+@mixin bootstrap-nav-li_a{
+    font-weight: $font-weight-1 ;
+    color: $primary-color ;
+    &:hover{
+        color: $primary-color-clear-3;
+
+    }
+    
+    &:active{
+        color: $primary-color-clear-2 ;
+    }
 }
