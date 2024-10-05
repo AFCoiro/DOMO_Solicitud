@@ -1,0 +1,54 @@
+/* Animación para el h2 que aparece desde un costado */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100vw); 
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0); 
+      opacity: 1;
+    }
+  }
+
+/* Animación para el border-bottom del span, ajustado al texto */
+@keyframes borderBottomAppear {
+    0% {
+      width: 0; 
+    }
+    100% {
+      width: 4.5em;
+    }
+    
+  }
+  
+
+
+  /* Animación para que el h1 caiga y rebote */
+  @keyframes dropAndBounce {
+    0% {
+      transform: translateY(-100vh); 
+      opacity: 0;
+    }
+    80% {
+      transform: translateY(0); 
+      opacity: 1;
+    }
+    90% {
+      transform: translateY(-10px); 
+    }
+    100% {
+      transform: translateY(0); 
+      opacity: 1; 
+    }
+  }
+
+  /* Animación de opacidad para el párrafo */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

@@ -30,13 +30,13 @@
 
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scss/style.css">
 
     <title>Businezz X - Grow your business with us</title>
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary container my-nav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary container-lg my-nav">
         <div class="container-fluid">
           <!-- Logo -->
           <a class="navbar-brand my-brand" href="#">
@@ -49,7 +49,7 @@
           </button>
       
           <!-- nav -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse my-dropdown" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="#inicio" title="Inicio de Businezz X">Home</a>
@@ -61,7 +61,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Pages
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#home">Home</a></li>
                   <li><a class="dropdown-item" href="#about">About</a></li>
                   <li><a class="dropdown-item" href="#packages">Packages</a></li>
@@ -82,55 +82,56 @@
       
             <!-- Free Consultation button -->
             <div class="d-flex">
-              <button class="my-btn hvr-btn"><span>Free Consultation &nbsp;</span></button>
+              <button class="btn-nav"> <span>Free Consultation</span> </button>
             </div>
           </div>
         </div>
       </nav>
     </header>  
     
-    <main class="my-main container-fluid">
-      <div class="row">
-        <!-- Left -->
-        <section class=" col-12 col-md-6  main-left ">
-          <div class="container mainDiv-left">
-                <h1 class="small-title border-btn">Welcome to Businezz X</h1>
-                <h2>Join us in growing your <span>business</span>.</h2>
-                <p class="subtitle">Elevate your business with Businezz X, a professional Webflow template.</p>
-                <button class="my-btn hvr-btn"><span>Contact us &nbsp;</span></button>
-          </div>
-        </section>
+    <main class="my-main ">
+      <div class="main-content container">
+        <div class="row flex-column flex-lg-row">
+          <!-- Left -->
+          <section class="d-flex justify-content-center justify-content-lg-start main-left ">
+            <div class=" d-flex flex-column justify-content-start  align-items-start  mainDiv-left">
+                  <h1 class="my-h1">Welcome to Businezz X</h1>
+                  <h2>Join us in growing your <span>business.</span></h2>
+                  <p class="subtitle">Elevate your business with Businezz X, a professional Webflow template.</p>
+                  <button class="btn-contactUs"><span>Contact us</span></button>
+            </div>
+          </section>
 
-        <!-- Right (form) -->
-        <section class="col-12 col-md-6 main-right d-flex justify-content-center align-items-center">
-          <form class="my-form square-form " aria-label="Consulta gratuita">
-              <fieldset>
-                <legend class="small-title border-btn">Book your free consultation</legend>
-                <h3>Get a free consultation</h3>
-              
-                <div class="form-body">
-                  <div class="form-inputs d-flex justify-content-between">
-                    <label for="name" >Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Name" class="form-control myInput" required>
-              
-                    <label for="email" >Correo electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="contact@email.com" class="form-control myInput" required>
+          <!-- Right (form) -->
+          <section class="col-12 col-lg-6 d-flex justify-content-center  justify-content-lg-end  main-right ">
+            <form class="my-form  " aria-label="free consultation">
+                <fieldset>
+                  <legend class="my-legend">Book your free consultation</legend>
+                  <h3>Get a free consultation</h3>
+                
+                  <div class="form-body">
+                    <div class="d-flex justify-content-between form-inputs">
+                      <label for="name" >Nombre</label>
+                      <input type="text" id="name" name="name" placeholder="Name" class="form-control myInput" required>
+                
+                      <label for="email" >Correo electrónico</label>
+                      <input type="email" id="email" name="email" placeholder="contact@email.com" class="form-control myInput" required>
+                    </div>
+                    
+                    <label for="message" >Mensaje</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Please type your message here..." class="form-control myInput" required></textarea>
+                
+                    <button type="submit" class="myBtn-form ">Get in Touch</button>
                   </div>
-                  
-                  <label for="message" >Mensaje</label>
-                  <textarea id="message" name="message" placeholder="Please type your message here..." class="form-control myInput" required></textarea>
-              
-                  <button type="submit" class="myBtn-form ">Get in Touch</button>
-                </div>
-              </fieldset>
-          </form>
-      </section>
-      
+                </fieldset>
+            </form>
+          </section>
+        </div>
       </div>
     </main>
 
   <footer class="container-fluid">
-      <div class="col text-center">
+      <div class=" col text-center">
             <p>Desarrollado por <strong>Agustín Coiro</strong></p>
             <a href="https://www.linkedin.com/in/agustinfcoiro/" target="_blank" class="linkedin-button">
               <img src="/img/linkedin.svg" alt="Logo de LinkedIn" class="linkedIn">

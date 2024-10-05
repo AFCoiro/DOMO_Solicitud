@@ -1,0 +1,380 @@
+@charset "UTF-8";
+/* Animación para el h2 que aparece desde un costado */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Animación para el border-bottom del span, ajustado al texto */
+@keyframes borderBottomAppear {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 4.5em;
+  }
+}
+/* Animación para que el h1 caiga y rebote */
+@keyframes dropAndBounce {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Animación de opacidad para el párrafo */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, "Inter", sans-serif;
+}
+
+body {
+  color: #022b41;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /*----------------------HEADER------------------------*/
+  /*----------------------MAIN------------------------*/
+  /*---------------------Footer---------------------*/
+}
+body header {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1;
+}
+body header .my-nav {
+  background-color: #FFFFFF !important;
+  height: 100%;
+}
+body header .my-nav li a {
+  font-weight: 700 !important;
+  color: #022b41 !important;
+}
+body header .my-nav .my-dropdown {
+  background-color: #FFFFFF;
+  z-index: 1000;
+}
+body header .my-nav .my-dropdown a {
+  color: #022b41;
+}
+body header .my-nav .my-dropdown a:active {
+  background-color: #cedae6;
+  color: #FFFFFF;
+}
+body .my-brand, body footer .linkedIn {
+  border-right: solid 1px #cedae6;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+body .my-brand .my-logo, body footer .linkedIn .my-logo {
+  filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
+  width: 30px;
+}
+body .btn-nav, body .my-main .main-left .mainDiv-left .btn-contactUs {
+  background-color: #FFFFFF !important;
+  color: #022b41 !important;
+  border: #022b41 solid 2px !important;
+  border-radius: 30px !important;
+  padding: 0.6rem 1rem !important;
+  width: 220px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+body .btn-nav:hover, body .my-main .main-left .mainDiv-left .btn-contactUs:hover {
+  background-color: #cedae6 !important;
+  color: #003957 !important;
+  border-color: #003957 !important;
+}
+body .btn-nav:active, body .my-main .main-left .mainDiv-left .btn-contactUs:active {
+  background-color: #003957 !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+}
+body .btn-nav::after, body .my-main .main-left .mainDiv-left .btn-contactUs::after {
+  content: " →";
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+body .btn-nav:hover::after, body .my-main .main-left .mainDiv-left .btn-contactUs:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+body .btn-nav span, body .my-main .main-left .mainDiv-left .btn-contactUs span {
+  display: inline-block;
+  transition: margin-right 0.3s ease;
+}
+body .btn-nav:hover span, body .my-main .main-left .mainDiv-left .btn-contactUs:hover span {
+  margin-right: 0.5rem;
+}
+body .my-main {
+  background: radial-gradient(at bottom left, #003957 2%, #022b41 98%);
+  padding: calc(10px + 20vh) 0;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  /*---------------------Left side---------------------*/
+  /*---------------------Right side---------------------*/
+}
+body .my-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url("../img/bg-1.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+@media (max-width: 992px) {
+  body .my-main {
+    background: none;
+    height: 100%;
+  }
+  body .my-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: radial-gradient(at bottom left, #003957 2%, #022b41 98%);
+    z-index: -1;
+  }
+  body .my-main::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    background: url("../img/bg-1.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+body .my-main .main-left {
+  background: none;
+  color: #f0f4ff;
+  width: 100%;
+  z-index: 1;
+  flex: 1;
+  height: 100%;
+}
+body .my-main .main-left .mainDiv-left {
+  width: 80%;
+}
+body .my-main .main-left .mainDiv-left .my-h1 {
+  background-color: #022b41 !important;
+  color: #f0f4ff !important;
+  border: #f0f4ff solid 2px !important;
+  border-radius: 30px !important;
+  padding: 0.6rem 1rem !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  opacity: 0;
+  transform: translateY(-100vh);
+  animation: dropAndBounce 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+body .my-main .main-left .mainDiv-left h2 {
+  font-size: clamp(1.5rem, 4vw, 3.2rem);
+  font-weight: 700;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1.2;
+  margin-bottom: 20%;
+  max-width: 100%;
+  opacity: 0;
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+body .my-main .main-left .mainDiv-left h2 span {
+  display: inline-block;
+  border-bottom: 3px solid #0499FF;
+  width: 0;
+  animation: borderBottomAppear 0.2s ease forwards;
+  animation-delay: 1s;
+}
+body .my-main .main-left .mainDiv-left .subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  border-top: #5c748f solid 1px;
+  padding-top: 1.5rem;
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.8s;
+}
+body .my-main .main-left .mainDiv-left .btn-contactUs {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.8s;
+}
+@media (max-width: 992px) {
+  body .my-main .main-left {
+    height: 100%;
+    margin: 30px 0;
+  }
+  body .my-main .main-left .mainDiv-left h2 {
+    font-size: clamp(3.5rem, 8vw, 4.5rem);
+  }
+  body .my-main .main-left .mainDiv-left .subtitle {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+body .my-main .main-right {
+  background: none !important;
+  box-sizing: border-box;
+  height: 100%;
+  flex: 1;
+  height: 100%;
+  z-index: 1;
+}
+body .my-main .main-right .my-form {
+  background-color: #f0f4ff;
+  padding: 30px 20px;
+  width: 28rem;
+  height: 28rem;
+}
+body .my-main .main-right .my-form .my-legend {
+  background-color: #f0f4ff !important;
+  color: #022b41 !important;
+  border: #022b41 solid 2px !important;
+  border-radius: 30px !important;
+  padding: 0.6rem 1rem !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  margin: 8px 20px;
+}
+body .my-main .main-right .my-form h3 {
+  font-weight: 700;
+  margin: 8px 20px;
+}
+body .my-main .main-right .my-form .form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+body .my-main .main-right .my-form .form-body .form-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+body .my-main .main-right .my-form .form-body label {
+  overflow: hidden !important;
+  display: none !important;
+}
+body .my-main .main-right .my-form .form-body .myInput {
+  padding: 1rem;
+}
+body .my-main .main-right .my-form .form-body .myBtn-form {
+  background-color: #FFFFFF !important;
+  color: #022b41 !important;
+  border: #022b41 solid 2px !important;
+  border-radius: 5px !important;
+  padding: 1rem 0 !important;
+  width: auto !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+body .my-main .main-right .my-form .form-body .myBtn-form:hover {
+  background-color: #cedae6 !important;
+  color: #003957 !important;
+  border-color: #003957 !important;
+}
+body .my-main .main-right .my-form .form-body .myBtn-form:active {
+  background-color: #003957 !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+}
+body .my-main .main-right .my-form .form-body input::-moz-placeholder, body .my-main .main-right .my-form .form-body textarea::-moz-placeholder {
+  color: #022b41 !important;
+  font-weight: 700;
+}
+body .my-main .main-right .my-form .form-body input::placeholder, body .my-main .main-right .my-form .form-body textarea::placeholder {
+  color: #022b41 !important;
+  font-weight: 700;
+}
+body .my-main .main-right .my-form .form-body input:focus::-moz-placeholder, body .my-main .main-right .my-form .form-body textarea:focus::-moz-placeholder {
+  color: #FFFFFF !important;
+}
+body .my-main .main-right .my-form .form-body input:focus::placeholder, body .my-main .main-right .my-form .form-body textarea:focus::placeholder {
+  color: #FFFFFF !important;
+}
+@media (max-width: 992px) {
+  body .my-main .main-right {
+    height: 100%;
+    margin-top: 30vh;
+  }
+  body .my-main .main-right .my-form {
+    width: clamp(28rem, 50vw, 40rem);
+    height: clamp(30rem, 50vh, 35rem);
+  }
+}
+body footer {
+  background-color: #f0f4ff;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+body footer .linkedIn {
+  filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
+  width: 30px;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}/*# sourceMappingURL=style.css.map */

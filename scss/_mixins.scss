@@ -1,0 +1,74 @@
+
+@mixin mains_flex-height{
+    flex: 1; 
+    height: 100%; 
+}
+
+@mixin svg-icons{
+    filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
+    width: 30px;
+} 
+ 
+@mixin btn-shape($bg-color, $color, $border,$border-rad, $padding, $width, $font-sz ){
+
+    background-color: $bg-color !important;
+    color:$color !important;
+    border: $border !important;
+    border-radius: $border-rad !important;
+    padding: $padding !important;
+    width: $width !important;
+    font-weight: 700 !important;
+    font-size: $font-sz !important; 
+
+}
+
+@mixin btn-function($hv-bg, $hv-cl, $hv-br,
+                    $ac-bg, $ac-cl, $ac-br ){
+
+    font-weight: $font-weight-1 !important;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;  
+    display: inline-block;
+
+    &:hover{
+        background-color: $hv-bg !important;
+        color: $hv-cl !important;
+        border-color: $hv-br !important;
+    }
+    
+    &:active{
+        background-color: $ac-bg !important;
+        color: $ac-cl !important;
+        border-color: $ac-br !important; 
+    }
+
+}
+
+@mixin btn-animation {
+    position: relative;
+    &::after {
+        content: " →";
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    &:hover::after {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    span {
+        display: inline-block;
+        transition: margin-right 0.3s ease;
+    }
+
+    &:hover span {
+        margin-right: 0.5rem;
+    }
+}
+
+@mixin mixin-fadeIn{
+    opacity: 0; 
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.8s; 
+}

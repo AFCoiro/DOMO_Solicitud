@@ -1,0 +1,275 @@
+@import "./var";
+@import "./mixins";
+@import "./animations";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, "Inter", sans-serif; 
+} 
+
+body{
+    color: $primary-color;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /*----------------------HEADER------------------------*/
+
+    header{
+        background-color: $white-color;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: $header-height 0 ;
+        z-index: 1;
+        .my-nav{
+            background-color: $white-color !important;
+            height: 100%;
+            //.my-brand linea 38
+            li{
+                a{
+                    font-weight: $font-weight-1 !important;
+                    color: $primary-color !important;
+                }
+            }
+            //.btn-nav linea 49
+            .my-dropdown{
+                background-color: $white-color; 
+                z-index: 1000; 
+        
+                a {
+                    color: $primary-color; 
+                    &:active {
+                        background-color: $secondary-color-dark; 
+                        color: $white-color; 
+                    }
+                }
+            }
+        }
+
+    }
+    //***********Para poder utilizar el extend en contact-us y linkedIn, se coloco por fuera del header el my-band y btn-nav
+    .my-brand{
+        border-right: solid 1px $secondary-color-dark;
+        padding-right: 1rem;
+        display: flex; 
+        align-items: center;
+        height: 30px;
+        .my-logo{
+            @include svg-icons;
+        }
+    }
+    .btn-nav{
+        @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-little-btn,$font-btn);
+
+        @include btn-function($secondary-color-dark, $primary-color-clear, $primary-color-clear,
+                              $primary-color-clear, $white-color, $white-color);
+                              
+        @include btn-animation;  
+    }
+
+
+
+    /*----------------------MAIN------------------------*/
+    .my-main {
+        background: 
+            radial-gradient(at bottom left, $primary-color-clear 2%, $primary-color 98%); 
+        padding: calc($header-height + 20vh) 0;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 0; 
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%; 
+            height: 100%;
+            background: url('../img/bg-1.jpg') no-repeat center center; 
+            background-size: cover; 
+            z-index: -1; 
+        }
+        @media (max-width: 992px) {
+            background: none; 
+            height: 100%;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0; 
+                width: 100%; 
+                height: 50%; 
+                background: radial-gradient(at bottom left, $primary-color-clear 2%, $primary-color 98%);
+                z-index: -1; 
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 50%; 
+                bottom: 0; 
+                background: url('../img/bg-1.jpg') no-repeat center center; 
+                background-size: cover; 
+                z-index: -1; 
+            }
+        }
+
+/*---------------------Left side---------------------*/
+        .main-left{
+            background: none;
+            color: $secondary-color;
+            width: 100%;
+            z-index: 1;
+            @include mains_flex-height;
+            .mainDiv-left{
+                width: 80%;
+                .my-h1{
+                    @include btn-shape($primary-color, $secondary-color, $secondary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-title);
+                    opacity: 0; 
+                    transform: translateY(-100vh); 
+                    animation: dropAndBounce 1s ease-out forwards;
+                    animation-delay: 0.5s; 
+                 }
+                 h2{
+                    font-size: clamp(1.5rem, 4vw, 3.2rem);
+                    font-weight: $font-weight-1;
+                    display: inline-block;
+                    overflow: hidden;
+                    line-height: 1.2;
+                    margin-bottom: 20%;
+                    max-width: 100%;
+                    opacity: 0;
+                    animation: slideInFromLeft 0.8s ease-out forwards;
+                 }
+                 h2 span {
+                    display: inline-block; 
+                    border-bottom: 3px solid $underline-title-color; 
+                    width: 0; 
+                    animation: borderBottomAppear 0.2s ease forwards;
+                    animation-delay: 1s; 
+                  }
+                 .subtitle{
+                    font-size: 20px;
+                    font-weight: $font-weight-2;
+                    border-top: $primary-color-clear-1 solid 1px;
+                    padding-top: 1.5rem;
+                    display: inline-block;
+                    @include mixin-fadeIn;
+
+                 }
+                .btn-contactUs{
+                    @extend .btn-nav;
+                    @include mixin-fadeIn;
+                 }
+            }
+        @media (max-width: 992px){
+            height: 100%;
+            margin: 30px 0;
+            .mainDiv-left{
+                h2{
+                    font-size: clamp(3.5rem, 8vw, 4.5rem) ;
+                }
+                .subtitle{
+                    font-size: 18px ;
+                    font-weight: $font-weight-3;
+                }
+            }
+
+        }
+        }
+
+/*---------------------Right side---------------------*/
+        .main-right {
+            background: none !important;
+            box-sizing: border-box;
+            height: 100%;
+            @include mains_flex-height;
+            z-index: 1;
+            .my-form{
+                background-color: $secondary-color;
+                padding: 30px $padding-form;
+                width: 28rem;
+                height: 28rem;
+                .my-legend{
+                    @include btn-shape($secondary-color,$primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-title);
+                    margin: 8px $padding-form;
+                } 
+                h3{
+                    font-weight: $font-weight-1;
+                    margin: 8px $padding-form; 
+                }
+                .form-body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem; 
+                    justify-content: space-between; 
+                    padding: $padding-form;
+                    box-sizing: border-box; 
+                    .form-inputs{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        gap: 1rem;
+                    }
+                    label{
+                        overflow: hidden !important;
+                        display: none !important;
+                    }
+                    .myInput{
+                        padding: 1rem;
+                    }
+                    .myBtn-form{
+                        @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,5px, 1rem 0, auto,$font-btn);
+
+                        @include btn-function($secondary-color-dark, $primary-color-clear,$primary-color-clear,
+                                              $primary-color-clear, $white-color, $white-color);
+                    }
+                    input, textarea {
+                        &::placeholder {
+                            color: $primary-color !important;
+                            font-weight: $font-weight-1;
+                        }
+                    
+                        &:focus::placeholder {
+                            color: $white-color !important;
+                        }
+                    }
+                    
+                }
+
+            }
+            @media (max-width: 992px){
+                height: 100%;
+                margin-top: 30vh;
+                .my-form{
+                    width: clamp(28rem, 50vw, 40rem); 
+                    height: clamp(30rem, 50vh, 35rem);
+                }
+            }
+        }
+    }
+
+
+/*---------------------Footer---------------------*/
+footer {
+    background-color: $secondary-color;
+    position: relative; 
+    width: 100%;
+    z-index: 1; 
+    .linkedIn {
+        @extend .my-brand;
+        @include svg-icons;
+        display: inline-block;
+        border: none;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+}
