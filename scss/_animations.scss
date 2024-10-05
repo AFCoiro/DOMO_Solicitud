@@ -1,4 +1,4 @@
-/* Animación para el h2 que aparece desde un costado */
+/* Animation for h2 that appears from the side */
 @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100vw); 
@@ -10,7 +10,7 @@
     }
   }
 
-/* Animación para el border-bottom del span, ajustado al texto */
+/* Animation for the border-bottom of the span, adjusted to the text */
 @keyframes borderBottomAppear {
     0% {
       width: 0; 
@@ -23,8 +23,8 @@
   
 
 
-  /* Animación para que el h1 caiga y rebote */
-  @keyframes dropAndBounce {
+/* Animation for h1 to fall and bounce */
+@keyframes dropAndBounce {
     0% {
       transform: translateY(-100vh); 
       opacity: 0;
@@ -42,8 +42,8 @@
     }
   }
 
-  /* Animación de opacidad para el párrafo */
-  @keyframes fadeIn {
+/* Opacity animation for the paragraph */
+@keyframes fadeIn {
     0% {
       opacity: 0;
     }

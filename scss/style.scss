@@ -146,14 +146,14 @@ body{
                     max-width: 100%;
                     opacity: 0;
                     animation: slideInFromLeft 0.8s ease-out forwards;
+                    span {
+                        display: inline-block; 
+                        border-bottom: 3px solid $underline-title-color; 
+                        width: 0; 
+                        animation: borderBottomAppear 0.2s ease forwards;
+                        animation-delay: 1s; 
+                      }
                  }
-                 h2 span {
-                    display: inline-block; 
-                    border-bottom: 3px solid $underline-title-color; 
-                    width: 0; 
-                    animation: borderBottomAppear 0.2s ease forwards;
-                    animation-delay: 1s; 
-                  }
                  .subtitle{
                     font-size: 20px;
                     font-weight: $font-weight-2;
@@ -174,6 +174,9 @@ body{
             .mainDiv-left{
                 h2{
                     font-size: clamp(3.5rem, 8vw, 4.5rem) ;
+                    span{
+                        display: block;
+                    }
                 }
                 .subtitle{
                     font-size: 18px ;
@@ -191,11 +194,15 @@ body{
             height: 100%;
             @include mains_flex-height;
             z-index: 1;
+            /*------------FORM---------------*/
             .my-form{
                 background-color: $secondary-color;
                 padding: 30px $padding-form;
                 width: 28rem;
                 height: 28rem;
+                @include mixin-fadeIn;
+                animation: fadeIn 0.5s ease-out forwards;
+                animation-delay: 0.9s; 
                 .my-legend{
                     @include btn-shape($secondary-color,$primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-title);
                     margin: 8px $padding-form;

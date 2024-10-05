@@ -3,12 +3,13 @@
     flex: 1; 
     height: 100%; 
 }
-
+/*color for brand and linkedIn icons*/
 @mixin svg-icons{
     filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
     width: 30px;
 } 
- 
+ /*button shape for titles and buttons*/
+
 @mixin btn-shape($bg-color, $color, $border,$border-rad, $padding, $width, $font-sz ){
 
     background-color: $bg-color !important;
@@ -21,7 +22,7 @@
     font-size: $font-sz !important; 
 
 }
-
+ /*button functions for buttons*/
 @mixin btn-function($hv-bg, $hv-cl, $hv-br,
                     $ac-bg, $ac-cl, $ac-br ){
 
@@ -43,7 +44,7 @@
     }
 
 }
-
+ /*button animations for buttons*/
 @mixin btn-animation {
     position: relative;
     &::after {
@@ -66,7 +67,7 @@
         margin-right: 0.5rem;
     }
 }
-
+/*Mixin for title animations*/
 @mixin mixin-fadeIn{
     opacity: 0; 
     animation: fadeIn 1.5s ease-out forwards;

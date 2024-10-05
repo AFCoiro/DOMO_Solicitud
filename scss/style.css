@@ -1,5 +1,10 @@
 @charset "UTF-8";
-/* Animación para el h2 que aparece desde un costado */
+/*color for brand and linkedIn icons*/
+/*button shape for titles and buttons*/
+/*button functions for buttons*/
+/*button animations for buttons*/
+/*Mixin for title animations*/
+/* Animation for h2 that appears from the side */
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100vw);
@@ -10,7 +15,7 @@
     opacity: 1;
   }
 }
-/* Animación para el border-bottom del span, ajustado al texto */
+/* Animation for the border-bottom of the span, adjusted to the text */
 @keyframes borderBottomAppear {
   0% {
     width: 0;
@@ -19,7 +24,7 @@
     width: 4.5em;
   }
 }
-/* Animación para que el h1 caiga y rebote */
+/* Animation for h1 to fall and bounce */
 @keyframes dropAndBounce {
   0% {
     transform: translateY(-100vh);
@@ -37,7 +42,7 @@
     opacity: 1;
   }
 }
-/* Animación de opacidad para el párrafo */
+/* Opacity animation for the paragraph */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -260,6 +265,9 @@ body .my-main .main-left .mainDiv-left .btn-contactUs {
   body .my-main .main-left .mainDiv-left h2 {
     font-size: clamp(3.5rem, 8vw, 4.5rem);
   }
+  body .my-main .main-left .mainDiv-left h2 span {
+    display: block;
+  }
   body .my-main .main-left .mainDiv-left .subtitle {
     font-size: 18px;
     font-weight: 500;
@@ -272,12 +280,18 @@ body .my-main .main-right {
   flex: 1;
   height: 100%;
   z-index: 1;
+  /*------------FORM---------------*/
 }
 body .my-main .main-right .my-form {
   background-color: #f0f4ff;
   padding: 30px 20px;
   width: 28rem;
   height: 28rem;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.8s;
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: 0.9s;
 }
 body .my-main .main-right .my-form .my-legend {
   background-color: #f0f4ff !important;
