@@ -1,60 +1,70 @@
-/*
--sumar al carrito con el click
--hacer un loading cuando se manda el formulario (en lugar del boton)
-*/
+
+//Form sends the user information to local storage and stores it in an array.
 const myForm = document.querySelector(".my-form");
 const myBtnForm = document.querySelector(".myBtn-form");
 const myInputs = document.querySelectorAll(".my-input");
-let nombre = myInputs[0].value;
-let email = myInputs[1].value;
-let textArea = myInputs[2].value; 
 
 const mySpinner = document.querySelector(".my-spinner");
 const confirmMsj = document.querySelector(".confirm-msj");
+const myCart = document.querySelector(".my-cart");
+
+let nombre = myInputs[0].value;
+let email = myInputs[1].value;
+let textArea = myInputs[2].value;
 
 class Usuarios {
-    constructor(id,nombre,email,msj){
+    constructor(id, nombre, email, msj) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.msj = msj;
     }
 }
+
+// Retrieve the current ID from localStorage or start it at 1 and populate the Cart
+let usuarioId = localStorage.getItem("usuarioId") ? parseInt(localStorage.getItem("usuarioId")) : 1;
+myCart.innerHTML = `Cart [${usuarioId}]`;
+
 const arrayUsuarios = [];
 
-myForm.addEventListener("submit", (e)=>{
+myForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    nombre = myInputs[0].value;
+    email = myInputs[1].value;
+    textArea = myInputs[2].value;
+
     myBtnForm.style.display = "none";
-    mySpinner.style.display = "block";
+    mySpinner.style.display = "flex";
 
     setTimeout(() => {
+        mySpinner.style.display = "none";
+        confirmMsj.style.display = "block";
 
-        let usuarioClave = "Usuario" + arrayUsuarios.length;
+
         let usuarioJson = new Usuarios(
-            arrayUsuarios.length, 
-            myInputs[0].value, 
-            myInputs[1].value, 
-            myInputs[2].value
+            usuarioId,  
+            nombre,     
+            email, 
+            textArea
         );
 
-        // Guardar el usuario en localStorage
+        let usuarioClave = "Usuario" + usuarioId;
         localStorage.setItem(usuarioClave, JSON.stringify(usuarioJson));
 
-        // Obtener el usuario desde localStorage
+        usuarioId++;
+        localStorage.setItem("usuarioId", usuarioId); 
         let clienteString = localStorage.getItem(usuarioClave);
         arrayUsuarios.push(JSON.parse(clienteString));
 
-        // Mostrar mensaje con los datos guardados
-        confirmMsj.innerHTML = `Message sent to ${usuarioJson.email} . We will be in contact soon ${usuarioJson.nombre}.
-        `;
-        confirmMsj.style.display = "block"; 
-        mySpinner.style.display = "none";  
-    }, 2000); 
+        confirmMsj.innerHTML = `✓ Message sent to ${usuarioJson.email}. We will be in contact soon, ${usuarioJson.nombre}.`;
+        myCart.innerHTML = `Cart [${usuarioJson.id}]`;
 
-    console.log(`Nuevo usuario registrado: ${clienteString}`);
-    myForm.reset();
-})
+        console.log(`Nuevo usuario registrado: ${clienteString}`);
+
+
+    }, 2000); 
+});
 
 
 

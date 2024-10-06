@@ -11,7 +11,7 @@
 //color ,font and font-width for texts ans titles
 @mixin title-style($color,$size,$weight){
     color: $color;
-    font-size:$size;
+    font-size:$size; 
     font-weight: $weight;
 }
  /*button shape for titles and buttons*/
@@ -70,6 +70,8 @@
         margin-right: 0.5rem;
     }
 }
+
+
 /*Mixin for title animations*/
 @mixin mixin-fadeIn{
     opacity: 0; 
@@ -77,9 +79,9 @@
     animation-delay: 0.8s; 
 }
 
-
-@mixin bootstrap-nav-li_a{
-    font-weight: $font-weight-1 ;
+/*Mixin for bootstrap navbar*/
+@mixin bootstrap-nav-li_a($font-weight) {
+    font-weight: $font-weight;
     color: $primary-color ;
     &:hover{
         color: $primary-color-clear-3;

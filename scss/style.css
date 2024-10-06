@@ -3,6 +3,7 @@
 /*borde top subtitle*/
 /*btn contactUs hover and underline span*/
 /*btn contactUs active*/
+/*approved form message*/
 /*color for brand and linkedIn icons*/
 /*button shape for titles and buttons*/
 /*button functions for buttons*/
@@ -52,6 +53,128 @@
     opacity: 0;
   }
   100% {
+    opacity: 1;
+  }
+}
+/*Spinner form*/
+.sk-fading-circle {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.sk-fading-circle .sk-circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sk-fading-circle .sk-circle:before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+  background-color: #333;
+  border-radius: 100%;
+  animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+}
+
+.sk-fading-circle .sk-circle2 {
+  transform: rotate(30deg);
+}
+
+.sk-fading-circle .sk-circle3 {
+  transform: rotate(60deg);
+}
+
+.sk-fading-circle .sk-circle4 {
+  transform: rotate(90deg);
+}
+
+.sk-fading-circle .sk-circle5 {
+  transform: rotate(120deg);
+}
+
+.sk-fading-circle .sk-circle6 {
+  transform: rotate(150deg);
+}
+
+.sk-fading-circle .sk-circle7 {
+  transform: rotate(180deg);
+}
+
+.sk-fading-circle .sk-circle8 {
+  transform: rotate(210deg);
+}
+
+.sk-fading-circle .sk-circle9 {
+  transform: rotate(240deg);
+}
+
+.sk-fading-circle .sk-circle10 {
+  transform: rotate(270deg);
+}
+
+.sk-fading-circle .sk-circle11 {
+  transform: rotate(300deg);
+}
+
+.sk-fading-circle .sk-circle12 {
+  transform: rotate(330deg);
+}
+
+.sk-fading-circle .sk-circle2:before {
+  animation-delay: -1.1s;
+}
+
+.sk-fading-circle .sk-circle3:before {
+  animation-delay: -1s;
+}
+
+.sk-fading-circle .sk-circle4:before {
+  animation-delay: -0.9s;
+}
+
+.sk-fading-circle .sk-circle5:before {
+  animation-delay: -0.8s;
+}
+
+.sk-fading-circle .sk-circle6:before {
+  animation-delay: -0.7s;
+}
+
+.sk-fading-circle .sk-circle7:before {
+  animation-delay: -0.6s;
+}
+
+.sk-fading-circle .sk-circle8:before {
+  animation-delay: -0.5s;
+}
+
+.sk-fading-circle .sk-circle9:before {
+  animation-delay: -0.4s;
+}
+
+.sk-fading-circle .sk-circle10:before {
+  animation-delay: -0.3s;
+}
+
+.sk-fading-circle .sk-circle11:before {
+  animation-delay: -0.2s;
+}
+
+.sk-fading-circle .sk-circle12:before {
+  animation-delay: -0.1s;
+}
+@keyframes sk-circleFadeDelay {
+  0%, 39%, 100% {
+    opacity: 0;
+  }
+  40% {
     opacity: 1;
   }
 }
@@ -107,6 +230,49 @@ body header .my-nav .my-dropdown a:active {
   background-color: #cedae6;
   color: #FFFFFF;
 }
+body header .btn-nav {
+  background-color: #FFFFFF !important;
+  border: #022b41 solid 2px !important;
+  border-radius: 30px !important;
+  padding: 0.6rem 2rem !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  color: #022b41;
+  font-size: 18px;
+  font-weight: 700;
+  font-weight: 700 !important;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+body header .btn-nav:hover {
+  background-color: #022b41 !important;
+  color: #f0f4ff !important;
+  border-color: #022b41 !important;
+}
+body header .btn-nav:active {
+  background-color: #053E5C !important;
+  color: #FFFFFF !important;
+  border-color: #053E5C !important;
+}
+body header .btn-nav::after {
+  content: " →";
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+body header .btn-nav:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+body header .btn-nav span {
+  display: inline-block;
+  transition: margin-right 0.3s ease;
+}
+body header .btn-nav:hover span {
+  margin-right: 0.5rem;
+}
 body .my-brand {
   border-right: solid 1px #cedae6;
   padding-right: 1rem;
@@ -118,51 +284,8 @@ body .my-brand .my-logo {
   filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
   width: 30px;
 }
-body .btn-nav, body .my-main .main-left .mainDiv-left .btn-contactUs {
-  background-color: #FFFFFF !important;
-  border: #022b41 solid 2px !important;
-  border-radius: 30px !important;
-  padding: 0.6rem 1rem !important;
-  width: 220px !important;
-  color: #022b41;
-  font-size: 16px;
-  font-weight: 700;
-  font-weight: 700 !important;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  display: inline-block;
-  position: relative;
-}
-body .btn-nav:hover, body .my-main .main-left .mainDiv-left .btn-contactUs:hover {
-  background-color: #022b41 !important;
-  color: #f0f4ff !important;
-  border-color: #022b41 !important;
-}
-body .btn-nav:active, body .my-main .main-left .mainDiv-left .btn-contactUs:active {
-  background-color: #053E5C !important;
-  color: #FFFFFF !important;
-  border-color: #053E5C !important;
-}
-body .btn-nav::after, body .my-main .main-left .mainDiv-left .btn-contactUs::after {
-  content: " →";
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-body .btn-nav:hover::after, body .my-main .main-left .mainDiv-left .btn-contactUs:hover::after {
-  opacity: 1;
-  transform: translateX(0);
-}
-body .btn-nav span, body .my-main .main-left .mainDiv-left .btn-contactUs span {
-  display: inline-block;
-  transition: margin-right 0.3s ease;
-}
-body .btn-nav:hover span, body .my-main .main-left .mainDiv-left .btn-contactUs:hover span {
-  margin-right: 0.5rem;
-}
 body .my-active a {
   color: #5c748f !important;
-  border-bottom: 1px solid #5c748f;
 }
 body .my-main {
   background: radial-gradient(at bottom left, #003957 2%, #022b41 98%);
@@ -188,6 +311,7 @@ body .my-main::before {
 @media (max-width: 992px) {
   body .my-main {
     background: none;
+    padding: 160px 0 100px;
     height: 100%;
   }
   body .my-main::before {
@@ -216,7 +340,7 @@ body .my-main .main-left {
   background: none;
   color: #f0f4ff;
   width: 100%;
-  z-index: 1;
+  overflow: hidden;
   flex: 1;
   height: 100%;
 }
@@ -227,7 +351,7 @@ body .my-main .main-left .mainDiv-left .my-h1 {
   background-color: transparent !important;
   border: #5c748f solid 2px !important;
   border-radius: 30px !important;
-  padding: 0.6rem 1rem !important;
+  padding: 0.6rem 0.8rem !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
   color: #f0f4ff;
@@ -267,14 +391,56 @@ body .my-main .main-left .mainDiv-left .subtitle {
   animation-delay: 0.8s;
 }
 body .my-main .main-left .mainDiv-left .btn-contactUs {
+  background-color: #FFFFFF !important;
+  border: transparent solid 2px !important;
+  border-radius: 30px !important;
+  padding: 0.6rem 2rem !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  color: #022b41;
+  font-size: 18px;
+  font-weight: 700;
+  font-weight: 700 !important;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
   opacity: 0;
   animation: fadeIn 1.5s ease-out forwards;
   animation-delay: 0.8s;
 }
+body .my-main .main-left .mainDiv-left .btn-contactUs:hover {
+  background-color: #FFFFFF !important;
+  color: #022b41 !important;
+  border-color: transparent solid 2px !important;
+}
+body .my-main .main-left .mainDiv-left .btn-contactUs:active {
+  background-color: #0499FF !important;
+  color: #FFFFFF !important;
+  border-color: #0499FF !important;
+}
+body .my-main .main-left .mainDiv-left .btn-contactUs::after {
+  content: " →";
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+body .my-main .main-left .mainDiv-left .btn-contactUs:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+body .my-main .main-left .mainDiv-left .btn-contactUs span {
+  display: inline-block;
+  transition: margin-right 0.3s ease;
+}
+body .my-main .main-left .mainDiv-left .btn-contactUs:hover span {
+  margin-right: 0.5rem;
+}
 @media (max-width: 992px) {
   body .my-main .main-left {
     height: 100%;
-    margin: 30px 0;
+    padding-bottom: 80px;
+    z-index: 1;
   }
   body .my-main .main-left .mainDiv-left h2 {
     font-size: clamp(3.5rem, 8vw, 4.5rem);
@@ -298,53 +464,57 @@ body .my-main .main-right {
 }
 body .my-main .main-right .my-form {
   background-color: #FFFFFF;
-  padding: 30px 20px;
+  padding: 0 20px;
   width: 28rem;
-  height: 28rem;
+  height: 30rem;
   opacity: 0;
   animation: fadeIn 1.5s ease-out forwards;
   animation-delay: 0.8s;
   animation: fadeIn 0.5s ease-out forwards;
   animation-delay: 0.9s;
 }
-body .my-main .main-right .my-form .my-legend {
+body .my-main .main-right .my-form fieldset {
+  height: 100%;
+}
+body .my-main .main-right .my-form fieldset .my-legend {
   background-color: #FFFFFF !important;
   border: #022b41 solid 2px !important;
   border-radius: 30px !important;
-  padding: 0.6rem 1rem !important;
+  padding: 0.6rem 0.8rem !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
   color: #022b41;
   font-size: 14px;
   font-weight: 700;
-  margin: 8px 20px 20px;
+  margin: 0 20px;
 }
-body .my-main .main-right .my-form h3 {
+body .my-main .main-right .my-form fieldset h3 {
   font-weight: 700;
-  margin: 20px;
+  margin: 0 20px;
+  padding-top: 1rem;
 }
-body .my-main .main-right .my-form .form-body {
+body .my-main .main-right .my-form fieldset .form-body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1rem;
-  justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
-body .my-main .main-right .my-form .form-body .form-inputs {
+body .my-main .main-right .my-form fieldset .form-body .form-inputs {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 0.8rem;
+  gap: 1rem;
 }
-body .my-main .main-right .my-form .form-body label {
+body .my-main .main-right .my-form fieldset .form-body label {
   overflow: hidden !important;
   display: none !important;
 }
-body .my-main .main-right .my-form .form-body .my-input {
+body .my-main .main-right .my-form fieldset .form-body .my-input {
   padding: 1rem;
 }
-body .my-main .main-right .my-form .form-body .myBtn-form {
+body .my-main .main-right .my-form fieldset .form-body .myBtn-form {
   background-color: #FFFFFF !important;
   border: #022b41 solid 2px !important;
   border-radius: 5px !important;
@@ -358,42 +528,47 @@ body .my-main .main-right .my-form .form-body .myBtn-form {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   display: inline-block;
 }
-body .my-main .main-right .my-form .form-body .myBtn-form:hover {
-  background-color: #0499FF !important;
+body .my-main .main-right .my-form fieldset .form-body .myBtn-form:hover {
+  background-color: #022b41 !important;
   color: #f0f4ff !important;
-  border-color: #0499FF !important;
+  border-color: #022b41 !important;
 }
-body .my-main .main-right .my-form .form-body .myBtn-form:active {
-  background-color: #0067AD !important;
-  color: #f0f4ff !important;
-  border-color: #0067AD !important;
+body .my-main .main-right .my-form fieldset .form-body .myBtn-form:active {
+  background-color: #053E5C !important;
+  color: #FFFFFF !important;
+  border-color: #053E5C !important;
 }
-body .my-main .main-right .my-form .form-body input::-moz-placeholder, body .my-main .main-right .my-form .form-body textarea::-moz-placeholder {
-  color: #022b41 !important;
-  font-weight: 700;
+body .my-main .main-right .my-form fieldset .form-body input::-moz-placeholder, body .my-main .main-right .my-form fieldset .form-body textarea::-moz-placeholder {
+  color: #022b41;
   font-size: 14px;
-}
-body .my-main .main-right .my-form .form-body input::placeholder, body .my-main .main-right .my-form .form-body textarea::placeholder {
-  color: #022b41 !important;
   font-weight: 700;
-  font-size: 14px;
 }
-body .my-main .main-right .my-form .form-body input:focus::-moz-placeholder, body .my-main .main-right .my-form .form-body textarea:focus::-moz-placeholder {
+body .my-main .main-right .my-form fieldset .form-body input::placeholder, body .my-main .main-right .my-form fieldset .form-body textarea::placeholder {
+  color: #022b41;
+  font-size: 14px;
+  font-weight: 700;
+}
+body .my-main .main-right .my-form fieldset .form-body input:focus::-moz-placeholder, body .my-main .main-right .my-form fieldset .form-body textarea:focus::-moz-placeholder {
   color: #FFFFFF !important;
 }
-body .my-main .main-right .my-form .form-body input:focus::placeholder, body .my-main .main-right .my-form .form-body textarea:focus::placeholder {
+body .my-main .main-right .my-form fieldset .form-body input:focus::placeholder, body .my-main .main-right .my-form fieldset .form-body textarea:focus::placeholder {
   color: #FFFFFF !important;
 }
-body .my-main .main-right .my-form .form-body .my-spinner {
+body .my-main .main-right .my-form fieldset .form-body .my-spinner {
   display: none;
+  margin: 0 auto;
 }
-body .my-main .main-right .my-form .form-body .confirm-msj {
+body .my-main .main-right .my-form fieldset .form-body .confirm-msj {
   display: none;
+  color: #00a884;
+  font-size: 14px;
+  font-weight: 700;
 }
 @media (max-width: 992px) {
   body .my-main .main-right {
+    z-index: 1;
     height: 100%;
-    margin-top: 30vh;
+    margin-top: 80px;
   }
   body .my-main .main-right .my-form {
     width: clamp(28rem, 50vw, 40rem);
@@ -417,7 +592,7 @@ body footer .sec-footer-1 .my-nav ul {
   gap: 1rem;
 }
 body footer .sec-footer-1 .my-nav ul li a {
-  font-weight: 700;
+  font-weight: 500;
   color: #022b41;
 }
 body footer .sec-footer-1 .my-nav ul li a:hover {
@@ -431,13 +606,17 @@ body footer .sec-footer-1 .follow-us p {
   font-size: 14px;
   font-weight: 700;
 }
-body footer .img-socialNet {
+body footer a .img-socialNet {
   filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
   width: 30px;
+  transition: transform 0.3s ease;
+}
+body footer a .img-socialNet:hover {
+  transform: scale(0.93);
 }
 body footer .footer-divider {
   padding: 30px 0;
-  border-top: 1px solid #5c748f;
+  border-top: 1px solid rgba(2, 43, 65, 0.2941176471);
 }
 body footer .footer-divider .about-title {
   cursor: pointer;
@@ -469,6 +648,20 @@ body footer .footer-divider a {
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
+  font-weight: 700 !important;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+body footer .footer-divider a:hover {
+  background-color: transparent !important;
+  color: #0499FF !important;
+  border-color: none !important;
+}
+body footer .footer-divider a:active {
+  background-color: transparent !important;
+  color: #0067AD !important;
+  border-color: none !important;
 }
 body footer .dropDown-sec {
   margin: 30px 0;

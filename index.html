@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary container-lg my-nav">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand my-brand" href="#">
+          <a class="navbar-brand my-brand" href="index.html">
             <img src="img/logo.svg" alt="Logo de Businezz X" style="height: 40px;" class="my-logo">
           </a>
       
@@ -52,7 +52,7 @@
           <div class="collapse navbar-collapse my-dropdown" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item active my-active my-li">
-                <a class="nav-link" href="#inicio" title="Inicio de Businezz X">Home</a>
+                <a class="nav-link"  href="index.html" title="Inicio de Businezz X">Home</a>
               </li>
               <li class="nav-item my-li">
                 <a class="nav-link" href="#about" title="Acerca de Businezz X">About</a>
@@ -76,7 +76,7 @@
                 <a class="nav-link" href="#contact" title="Contáctanos en Businezz X">Contact</a>
               </li>
               <li class="nav-item my-li">
-                <a class="nav-link" href="#cart" title="Ver tu carrito en Businezz X">Cart [0]</a>
+                <a class="nav-link my-cart" href="#cart" title="Ver tu carrito en Businezz X"></a>
               </li>
             </ul>
       
@@ -98,17 +98,21 @@
                   <h1 class="my-h1">Welcome to Businezz X</h1>
                   <h2>Join us in growing your <span>business.</span></h2>
                   <p class="subtitle">Elevate your business with Businezz X, a professional Webflow template.</p>
-                  <button class="btn-contactUs"><span>Contact us</span></button>
+                  <a href="mailto:agustinfcoiro@gmail.com" class="btn-contactUs">
+                    <span>Contact us</span>
+                  </a>
             </div>
           </section>
 
           <!-- Right (form) -->
           <section class="col-12 col-lg-6 d-flex justify-content-center  justify-content-lg-end  main-right ">
-            <form class="my-form  " aria-label="free consultation">
-                <fieldset>
-                  <legend class="my-legend">Book your free consultation</legend>
-                  <h3>Get a free consultation</h3>
-                
+            <form class="d-flex flex-column justify-content-evenly my-form  " aria-label="free consultation">
+                <fieldset class="d-flex flex-column justify-content-evenly">
+                  <div>
+                    <legend class="my-legend">Book your free consultation</legend>
+                    <h3>Get a free consultation</h3>
+                  </div>
+                               
                   <div class="form-body">
                     <div class="d-flex justify-content-between form-inputs">
                       <label for="name" >Nombre</label>
@@ -122,7 +126,23 @@
                     <textarea id="message" name="message" rows="3" placeholder="Please type your message here..." class="form-control my-input" required></textarea>
                 
                     <button type="submit" class="myBtn-form">Get in Touch</button>
-                    <div class="my-spinner"></div>
+
+                      <div class="sk-fading-circle my-spinner">
+                        <div class="sk-circle1 sk-circle"></div>
+                        <div class="sk-circle2 sk-circle"></div>
+                        <div class="sk-circle3 sk-circle"></div>
+                        <div class="sk-circle4 sk-circle"></div>
+                        <div class="sk-circle5 sk-circle"></div>
+                        <div class="sk-circle6 sk-circle"></div>
+                        <div class="sk-circle7 sk-circle"></div>
+                        <div class="sk-circle8 sk-circle"></div>
+                        <div class="sk-circle9 sk-circle"></div>
+                        <div class="sk-circle10 sk-circle"></div>
+                        <div class="sk-circle11 sk-circle"></div>
+                        <div class="sk-circle12 sk-circle"></div>
+                      </div>
+
+
                     <div class="confirm-msj"></div>
 
 
@@ -139,17 +159,16 @@
         <!-- Sección 1 -->
         <section class="d-md-flex flex-column sec-footer-1">
           <!-- Parte 1: Logo -->
-          <a class="navbar-brand my-brand container-fluid" href="#">
+          <a class="navbar-brand my-brand "  href="index.html">
             <img src="img/logo.svg" alt="Logo de Businezz X" style="height: 40px;" class="my-logo">
           </a>
     
-          <div class="d-md-flex justify-content-between">
-            
+          <div class="d-md-flex justify-content-between align-items-end ">
             <!-- Navbar-->
             <nav class="navbar bg-body-tertiary container-fluid my-nav">
-              <div class="container-fluid">
+              <div>
                 <div class="navbar-collapse my-dropdown d-md-flex justify-content-between" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row align-items-center flex-wrap flex-md-nowrap">
+                  <ul class="collapse navbar-collapse navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row align-items-center flex-wrap flex-md-nowrap">
                     <li class="nav-item active my-active">
                       <a class="nav-link" href="#inicio" title="Inicio de Businezz X">Home</a>
                     </li>
@@ -157,15 +176,9 @@
                       <a class="nav-link" href="#about" title="Acerca de Businezz X">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Pages
                       </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#section1">section 1</a></li>
-                        <li><a class="dropdown-item" href="#section2">section 2</a></li>
-                        <li><a class="dropdown-item" href="#section3">section 3</a></li>
-                        <li><a class="dropdown-item" href="#section4">section 4</a></li>
-                      </ul>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#packages" title="Paquetes de Businezz X">Packages</a>
@@ -174,7 +187,7 @@
                       <a class="nav-link" href="#contact" title="Contáctanos en Businezz X">Contact</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#cart" title="Ver tu carrito en Businezz X">Cart [0]</a>
+                      <a class="nav-link my-cart" href="#cart" title="Ver tu carrito en Businezz X">Cart []</a>
                     </li>
                   </ul>
                 </div>
@@ -183,20 +196,20 @@
     
     
           <!-- Redes sociales -->
-          <div class="d-md-block follow-us mt-3">
+          <div class="d-md-block follow-us">
             <p>Follow Us</p>
-            <ul class="list-unstyled d-flex ul-socialNet justify-content-start">
+            <ul class="list-unstyled d-flex justify-content-start ul-socialNet">
               <li class="me-2">
-                <a href="#"><img class="img-socialNet" src="img/fb_logo.svg" alt="Facebook"></a>
+                <a href="https://www.facebook.com/?locale=es_LA" target=”_blank”><img class="img-socialNet" src="img/fb_logo.svg" alt="Facebook"></a>
               </li>
               <li class="me-2">
-                <a href="#"><img class="img-socialNet" src="img/ig_logo.svg" alt="Instagram"></a>
+                <a href="https://www.instagram.com/" target=”_blank”><img class="img-socialNet" src="img/ig_logo.svg" alt="Instagram"></a>
               </li>
               <li class="me-2">
-                <a href="#"><img class="img-socialNet" src="img/x_logo.svg" alt="Twitter"></a>
+                <a href="https://x.com/?lang=es" target=”_blank”><img class="img-socialNet" src="img/x_logo.svg" alt="Twitter"></a>
               </li>
               <li class="me-2">
-                <a href="#"><img class="img-socialNet" src="img/in_logo.svg" alt="LinkedIn"></a>
+                <a href="https://www.linkedin.com/" target=”_blank”><img class="img-socialNet" src="img/in_logo.svg" alt="LinkedIn"></a>
               </li>
             </ul>
           </div>
@@ -236,9 +249,12 @@
         <section class="d-md-flex justify-content-between align-items-center dropDown-sec">
   <!-- Parte izquierda: Párrafo -->
           <article class="col-md-6 mb-4 mb-md-0">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula lectus nec libero fermentum, eget ultricies libero vestibulum.
-            </p>
+            <p>I developed a fully responsive landing page, maintaining a high fidelity to the original design. Additionally, I added a footer with contact information and other relevant details. To enhance the user experience, I incorporated dynamic animations, buttons with three states, and a functional form.</p>
+
+            <p>The technologies applied include Bootstrap, CSS, JavaScript, and SASS. Using SASS allowed me to maintain clean and organized code, making it easier to understand and maintain. I also utilized specific color codes to ensure visual consistency throughout the page.</p>
+
+            <p>I paid close attention to the naming of elements and the structure of the code to ensure functionality and accurately replicate the original design. </p>
+
           </article>
         
   <!-- Parte derecha: Información de contacto y redes sociales -->
@@ -257,10 +273,10 @@
               <!-- Redes sociales alineadas en fila -->
               <ul class="list-unstyled d-flex mt-2">
                 <li class="me-2">
-                  <a href="#"><img class="img-socialNet" src="img/github_logo.svg" alt="GitHub"></a>
-                </li>
+                  <a href="https://github.com/AFCoiro" target=”_blank”><img class="img-socialNet" src="img/github_logo.svg" alt="GitHub"></a>
+                </li> 
                 <li class="me-2">
-                  <a href="#"><img class="img-socialNet" src="img/in_logo.svg" alt="LinkedIn"></a>
+                  <a href="https://www.linkedin.com/in/agust%C3%ADn-coiro-0a5223200/" target=”_blank”><img class="img-socialNet" src="img/in_logo.svg" alt="LinkedIn"></a>
                 </li>
               </ul>
             </div>

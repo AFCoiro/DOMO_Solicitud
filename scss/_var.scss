@@ -1,6 +1,6 @@
 $primary-color:#022b41;
 $primary-color-clear:#003957;
-
+$primary-transparent-color:#022b414b;
 $secondary-color:#f0f4ff;
 $secondary-color-dark:#cedae6;
 
@@ -11,21 +11,21 @@ $primary-color-clear-1:#053E5C;/* btn active*/
 $primary-color-clear-2:#5c748f;/*borde top subtitle*/
 $primary-color-clear-3:#0499FF;/*btn contactUs hover and underline span*/
 $primary-color-clear-4:#0067AD;/*btn contactUs active*/
+$approved-color: #00a884;/*approved form message*/
 
-$font-weight-0:800;
 $font-weight-1:700;
 $font-weight-2:600;
 $font-weight-3:500;
 
 $header-height: 10px;
 
-$border-solid-px: solid 2px;
+$header-height: solid 2px;
 $border-rad-little-btn: 30px;
-$border-pad-little-btn: 0.6rem 1rem;
-
+$border-pad-btn: 0.6rem 2rem;
+$border-pad-little: 0.6rem 0.8rem;
 $padding-form:20px;
 
-$width-little-btn: 220px;
+$width-little-btn: 180px;
 $width-title:fit-content;
 
 $font-title:18px;

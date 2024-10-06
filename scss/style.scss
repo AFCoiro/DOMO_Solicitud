@@ -30,7 +30,7 @@ body{
             height: 100%;
             .my-li {
                 a{
-                    @include bootstrap-nav-li_a;
+                    @include bootstrap-nav-li_a($font-weight-1);
                 
                 }
             }
@@ -47,9 +47,15 @@ body{
                 }
             }
         }
-
+        .btn-nav{
+            @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-btn, $width-title,$font-title);
+    
+            @include btn-function($primary-color, $secondary-color, $primary-color,
+            $primary-color-clear-1, $white-color, $primary-color-clear-1);
+                                  
+            @include btn-animation;  
+        }
     }
-    //***********Para poder utilizar el extend en algunos items del nav, se coloco por fuera del header losiguiente:
     .my-brand{
         border-right: solid 1px $secondary-color-dark;
         padding-right: 1rem;
@@ -60,18 +66,9 @@ body{
             @include svg-icons;
         }
     }
-    .btn-nav{
-        @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-little-btn,$font-btn);
-
-        @include btn-function($primary-color, $secondary-color, $primary-color,
-        $primary-color-clear-1, $white-color, $primary-color-clear-1);
-                              
-        @include btn-animation;  
-    }
     .my-active{
         a{
             color: $primary-color-clear-2 !important;
-            border-bottom: 1px solid $primary-color-clear-2;
         }
     }
 
@@ -95,8 +92,10 @@ body{
             background-size: cover; 
             z-index: -1; 
         }
+
         @media (max-width: 992px) {
             background: none; 
+            padding: 160px 0 100px;
             height: 100%;
             &::before {
                 content: '';
@@ -117,22 +116,22 @@ body{
                 height: 50%; 
                 bottom: 0; 
                 background: url('../img/bg-1.jpg') no-repeat center center; 
-                background-size: cover; 
+                background-size:cover;
                 z-index: -1; 
             }
         }
 
-/*---------------------Left side---------------------*/
+        /*---------------------Left side---------------------*/
         .main-left{
             background: none;
             color: $secondary-color;
             width: 100%;
-            z-index: 1;
+            overflow: hidden;
             @include mains_flex-height;
             .mainDiv-left{
                 width: 80%;
                 .my-h1{
-                    @include btn-shape(transparent, $secondary-color, $primary-color-clear-2$border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-input);
+                    @include btn-shape(transparent, $secondary-color, $primary-color-clear-2$border-solid-px,$border-rad-little-btn, $border-pad-little, $width-title,$font-input);
                     opacity: 0; 
                     transform: translateY(-100vh); 
                     animation: dropAndBounce 1s ease-out forwards;
@@ -166,13 +165,20 @@ body{
 
                  }
                 .btn-contactUs{
-                    @extend .btn-nav;
+                    @include btn-shape($white-color, $primary-color, transparent $border-solid-px,$border-rad-little-btn, $border-pad-btn, $width-title,$font-title);
+    
+                    @include btn-function($white-color, $primary-color, transparent $border-solid-px,
+                    $primary-color-clear-3, $white-color, $primary-color-clear-3);   
+
+                    @include btn-animation;  
                     @include mixin-fadeIn;
                  }
             }
+
         @media (max-width: 992px){
             height: 100%;
-            margin: 30px 0;
+            padding-bottom: 80px;
+            z-index: 1;
             .mainDiv-left{
                 h2{
                     font-size: clamp(3.5rem, 8vw, 4.5rem) ;
@@ -189,7 +195,7 @@ body{
         }
         }
 
-/*---------------------Right side---------------------*/
+        /*---------------------Right side---------------------*/
         .main-right {
             background: none !important;
             box-sizing: border-box;
@@ -199,70 +205,77 @@ body{
             /*------------FORM---------------*/
             .my-form{
                 background-color: $white-color;
-                padding: 30px $padding-form;
+                padding: 0 $padding-form;
                 width: 28rem;
-                height: 28rem;
+                height: 30rem;
                 @include mixin-fadeIn;
                 animation: fadeIn 0.5s ease-out forwards;
                 animation-delay: 0.9s; 
-                .my-legend{
-                    @include btn-shape($white-color,$primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little-btn, $width-title,$font-input);
-                    margin: 8px $padding-form $padding-form;
-                    
-                } 
-                h3{
-                    font-weight: $font-weight-1;
-                    margin:  $padding-form; 
-                }
-                .form-body {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem; 
-                    justify-content: space-between; 
-                    padding: $padding-form;
-                    box-sizing: border-box; 
-                    .form-inputs{
+                fieldset{
+                    height: 100%;
+                    .my-legend{
+                        @include btn-shape($white-color,$primary-color, $primary-color $border-solid-px,$border-rad-little-btn, $border-pad-little, $width-title,$font-input);
+                        margin: 0 $padding-form;                        
+                    } 
+                    h3{
+                        font-weight: $font-weight-1;
+                        margin:  0 $padding-form; 
+                        padding-top: 1rem;
+                    }
+                    .form-body {
                         display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        gap: 0.8rem;
-                    }
-                    label{
-                        overflow: hidden !important;
-                        display: none !important;
-                    }
-                    .my-input{
-                        padding: 1rem;
-                    }
-                    .myBtn-form{
-                        @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,5px, 1rem 0, auto,$font-btn);
-
-                        @include btn-function($primary-color-clear-3,$secondary-color,$primary-color-clear-3,
-                        $primary-color-clear-4, $secondary-color, $primary-color-clear-4);
-                    }
-                    input, textarea {
-                        &::placeholder {
-                            color: $primary-color !important;
-                            font-weight: $font-weight-1;
-                            font-size: $font-input;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 1rem; 
+                        padding: 0 $padding-form;
+                        box-sizing: border-box; 
+                        .form-inputs{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            gap: 1rem;
                         }
-                    
-                        &:focus::placeholder {
-                            color: $white-color !important;
+                        label{
+                            overflow: hidden !important;
+                            display: none !important;
                         }
-                    }
-                    .my-spinner{
-                        display:none;
-                    }
-                    .confirm-msj{
-                        display:none;
+                        .my-input{
+                            padding: 1rem;
+                        }
+                        .myBtn-form{
+                            @include btn-shape($white-color, $primary-color, $primary-color $border-solid-px,5px, 1rem 0, auto,$font-btn);
+    
+                            @include btn-function($primary-color, $secondary-color, $primary-color,
+                            $primary-color-clear-1, $white-color, $primary-color-clear-1);
+                        }
+                        input, textarea {
+                            &::placeholder {
+                                @include title-style($primary-color,$font-input,$font-weight-1)
+                            }
+                        
+                            &:focus::placeholder {
+                                color: $white-color !important;
+                            }
+                        }
+                        .my-spinner{
+                            display:none;
+                            margin: 0 auto;
+    
+                        }
+                        .confirm-msj{
+                            display:none;
+                            @include title-style($approved-color,$font-input,$font-weight-1)
+                        }
                     }
                 }
+
 
             }
+            
             @media (max-width: 992px){
+                z-index: 1;
                 height: 100%;
-                margin-top: 30vh;
+                margin-top: 80px;
                 .my-form{
                     width: clamp(28rem, 50vw, 40rem); 
                     height: clamp(30rem, 50vh, 35rem);
@@ -273,7 +286,7 @@ body{
 
 
 /*---------------------Footer---------------------*/
-footer {
+footer { 
     background-color: $secondary-color;
     position: relative; 
     width: 100%;
@@ -287,7 +300,7 @@ footer {
             gap:1rem;
             li{
                 a{
-                    @include bootstrap-nav-li_a;
+                    @include bootstrap-nav-li_a($font-weight-3);
     
                 }
             }
@@ -305,12 +318,19 @@ footer {
         }
 
     }
-    .img-socialNet{
-        @include svg-icons;
-    }
+        a {
+            .img-socialNet {
+                @include svg-icons; 
+                transition: transform 0.3s ease;
+                &:hover {
+                    transform: scale(0.93);
+                }
+            }
+        }
+    
     .footer-divider{
         padding: 30px 0;
-        border-top: 1px solid $primary-color-clear-2;
+        border-top: 1px solid $primary-transparent-color;
         .about-title{
             cursor: pointer;
             &::after {
@@ -337,6 +357,8 @@ footer {
         a{
             @include title-style($primary-color,$font-input,$font-weight-2);
             text-decoration: none;
+            @include btn-function (transparent ,$primary-color-clear-3, none,
+            transparent ,$primary-color-clear-4, none );
         }
     }
 
