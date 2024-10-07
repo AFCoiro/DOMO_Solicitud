@@ -24,6 +24,6 @@
 <br>
   
 # 📁 Acceso al proyecto
-https://afcoiro.github.io/DOMO_Solicitud/
 
-👉 https://afcoiro.github.io/cv_agustin-coiro/index.html
+
+👉 https://afcoiro.github.io/DOMO_Solicitud/
