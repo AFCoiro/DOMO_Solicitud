@@ -9,6 +9,7 @@
 /*button functions for buttons*/
 /*button animations for buttons*/
 /*Mixin for title animations*/
+/*Mixin for bootstrap navbar*/
 /* Animation for h2 that appears from the side */
 @keyframes slideInFromLeft {
   0% {
@@ -288,8 +289,8 @@ body .my-active a {
   color: #5c748f !important;
 }
 body .my-main {
+  margin-top: 20px;
   background: radial-gradient(at bottom left, #003957 2%, #022b41 98%);
-  padding: calc(10px + 20vh) 0;
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -311,7 +312,6 @@ body .my-main::before {
 @media (max-width: 992px) {
   body .my-main {
     background: none;
-    padding: 160px 0 100px;
     height: 100%;
   }
   body .my-main::before {
@@ -337,6 +337,8 @@ body .my-main::before {
   }
 }
 body .my-main .main-left {
+  padding-top: calc(10px + 20vh);
+  padding-bottom: 20vh;
   background: none;
   color: #f0f4ff;
   width: 100%;
@@ -363,7 +365,7 @@ body .my-main .main-left .mainDiv-left .my-h1 {
   animation-delay: 0.5s;
 }
 body .my-main .main-left .mainDiv-left h2 {
-  font-size: clamp(1.5rem, 4vw, 3.2rem);
+  font-size: clamp(1.5rem, 3.5vw, 3.2rem);
   font-weight: 700;
   display: inline-block;
   overflow: hidden;
@@ -439,7 +441,7 @@ body .my-main .main-left .mainDiv-left .btn-contactUs:hover span {
 @media (max-width: 992px) {
   body .my-main .main-left {
     height: 100%;
-    padding-bottom: 80px;
+    padding: 180px 0 120px;
     z-index: 1;
   }
   body .my-main .main-left .mainDiv-left h2 {
@@ -454,6 +456,7 @@ body .my-main .main-left .mainDiv-left .btn-contactUs:hover span {
   }
 }
 body .my-main .main-right {
+  padding-top: calc(10px + 20vh);
   background: none !important;
   box-sizing: border-box;
   height: 100%;
@@ -568,7 +571,7 @@ body .my-main .main-right .my-form fieldset .form-body .confirm-msj {
   body .my-main .main-right {
     z-index: 1;
     height: 100%;
-    margin-top: 80px;
+    padding: 120px 0;
   }
   body .my-main .main-right .my-form {
     width: clamp(28rem, 50vw, 40rem);

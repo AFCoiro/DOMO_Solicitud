@@ -3,6 +3,12 @@
     flex: 1; 
     height: 100%; 
 }
+
+@mixin main-padding {
+  padding-top: calc($header-height + 20vh);
+  padding-bottom: 20vh;
+}
+ 
 /*color for brand and linkedIn icons*/
 @mixin svg-icons{
     filter: invert(12%) sepia(25%) saturate(3761%) hue-rotate(174deg) brightness(94%) contrast(98%);
